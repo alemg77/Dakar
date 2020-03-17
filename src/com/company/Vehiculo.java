@@ -17,5 +17,27 @@ public class Vehiculo {
         this.ruedas = ruedas;
     }
 
+    public Integer getVelocidad() {
+        return velocidad;
+    }
 
+    public Integer getAceleracion() {
+        return aceleracion;
+    }
+
+    public Integer getAnguloDeGiro() {
+        return anguloDeGiro;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public Integer getPeso() {
+        return peso;
+    }
+
+    public Integer getRuedas() {
+        return ruedas;
+    }
 }
