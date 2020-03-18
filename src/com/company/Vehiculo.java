@@ -1,14 +1,14 @@
 package com.company;
 
 public class Vehiculo {
-    private Integer velocidad;
-    private Integer aceleracion;
-    private Integer anguloDeGiro;
+    private Double  velocidad;
+    private Double aceleracion;
+    private Double anguloDeGiro;
     private String patente;
-    private Integer peso;
+    private Double peso;
     private Integer ruedas;
 
-    public Vehiculo(Integer velocidad, Integer aceleracion, Integer anguloDeGiro, String patente, Integer peso, Integer ruedas) {
+    public Vehiculo(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente, Double  peso, Integer ruedas) {
         this.velocidad = velocidad;
         this.aceleracion = aceleracion;
         this.anguloDeGiro = anguloDeGiro;
@@ -17,15 +17,15 @@ public class Vehiculo {
         this.ruedas = ruedas;
     }
 
-    public Integer getVelocidad() {
+    public Double getVelocidad() {
         return velocidad;
     }
 
-    public Integer getAceleracion() {
+    public Double getAceleracion() {
         return aceleracion;
     }
 
-    public Integer getAnguloDeGiro() {
+    public Double getAnguloDeGiro() {
         return anguloDeGiro;
     }
 
@@ -33,11 +33,28 @@ public class Vehiculo {
         return patente;
     }
 
-    public Integer getPeso() {
+    public Double getPeso() {
         return peso;
     }
 
     public Integer getRuedas() {
         return ruedas;
     }
+
+    @Override
+    public String toString() {
+        return "\nVehiculo{" +
+                "velocidad=" + velocidad +
+                ", aceleracion=" + aceleracion +
+                ", anguloDeGiro=" + anguloDeGiro +
+                ", patente='" + patente + '\'' +
+                ", peso=" + peso +
+                ", ruedas=" + ruedas +
+                '}';
+    }
+
+    public Double calcularPuntos(){
+        return  (((this.anguloDeGiro * ( this.peso - this.ruedas * 100)) * this.velocidad * this.velocidad )/2);
+    }
+
 }
